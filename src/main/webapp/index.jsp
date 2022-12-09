@@ -45,7 +45,7 @@
                         <div>
                             <p>Julia dances in the deep dark</p>
                         </div>
-                        <a href="#">View more</a>
+                        <a href="board/board_list.jsp">View more</a>
                     </figcaption>
                 </figure>
                 <figure class="effect-julia item">
