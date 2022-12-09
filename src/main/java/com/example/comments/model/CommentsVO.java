@@ -1,6 +1,6 @@
 package com.example.comments.model;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 public class CommentsVO {
 

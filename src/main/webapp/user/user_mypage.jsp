@@ -14,7 +14,7 @@
 		<input type="button" value="내가 쓴 글 조회"
 				onclick="location.href='user_content.board?id=${sessionScope.user_id}'">
 		<input type="button" value="내가 쓴 댓글 조회"
-				onclick="location.href='comments_comments.comments'">
+				onclick="location.href='user_comments.comments'">
 		</div>
 	
 	</div>
