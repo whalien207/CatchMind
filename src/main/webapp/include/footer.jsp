@@ -18,9 +18,9 @@
     <div class="loader-section section-left"></div>
     <div class="loader-section section-right"></div>
   </div>  
-  <script src="js/jquery-3.5.1.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/slick.js"></script>
-  <script src="js/templatemo-script.js"></script>
+  <script src="${pageContext.request.contextPath }/js/jquery-3.5.1.min.js"></script>
+  <script src="${pageContext.request.contextPath }/js/bootstrap.min.js"></script>
+  <script src="${pageContext.request.contextPath }/js/slick.js"></script>
+  <script src="${pageContext.request.contextPath }/js/templatemo-script.js"></script>
 </body>
 </html>
