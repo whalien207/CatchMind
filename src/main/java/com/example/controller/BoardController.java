@@ -92,7 +92,7 @@ public class BoardController extends HttpServlet {
 			} else {//삭제 실패
 				msg= "삭제 실패";
 				
-			}
+		} 
 			
 			response.setContentType("text/html; charset=utf-8");
 			PrintWriter out=response.getWriter();
@@ -101,6 +101,12 @@ public class BoardController extends HttpServlet {
 			out.println("location.href='board_list.board';");
 			out.println("</script>");
 			
+		} else if(command.equals("/user/user_content.board")) {
+			
+			ArrayList<BoardVO> list = service.inquireBoard(request, response);
+			request.setAttribute("list", list);
+			
+			request.getRequestDispatcher("user_content.jsp").forward(request, response);
 		}
 	}
 
