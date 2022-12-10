@@ -82,14 +82,7 @@ public class BoardController extends HttpServlet {
 			service.regist(request, response);
 			response.sendRedirect("board_list.board");
 			
-		} else if (command.equals("/board/updateForm.board")) {
-			service.update(request, response);
-			//1st
-			//response.sendRedirect("board_list.board");
-			
-			//2nd
-			response.sendRedirect("board_content.board?bno="+request.getParameter("bno"));
-		} else if (command.equals("/board/board_delete.board")) {
+		}  else if (command.equals("/board/board_delete.board")) {
 			int result = service.delete(request, response);
 			String msg = "";
 			

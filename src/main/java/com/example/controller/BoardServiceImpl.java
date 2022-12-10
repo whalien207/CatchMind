@@ -40,17 +40,6 @@ public class BoardServiceImpl implements BoardService{
 		return vo;
 	}
 
-	@Override
-	public void update(HttpServletRequest request, HttpServletResponse response) {
-		//화면에서 넘어오는 값
-		String bno = request.getParameter("bno");
-
-		String title = request.getParameter("title");
-		String content = request.getParameter("content");
-		BoardDAO dao = BoardDAO.getInstance();
-		
-		dao.update(bno, title, content);
-	}
 
 	@Override
 	public int delete(HttpServletRequest request, HttpServletResponse response) {

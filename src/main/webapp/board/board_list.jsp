@@ -4,7 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ include file="../include/header.jsp"%>
 <div class="container">
-	<h3>캐치마인드!!</h3>
+	<h3>캐치마인드</h3>
 
 	<div class="row">
 		<div class="box">

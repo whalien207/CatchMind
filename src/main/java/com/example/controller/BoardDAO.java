@@ -13,7 +13,7 @@ import org.apache.catalina.connector.Request;
 public class BoardDAO {
 	// UserDAO는 불필요하게 여러개 만들어질 필요가 없기 떄문에
 		// 하나의 객체만 만들어지도록 Singleton형식으로 설계합니다.
-
+		
 		// 1.나자신의 객체를 생성해서 1개로 제한합니다.
 		private static BoardDAO instance = new BoardDAO();
 
@@ -124,27 +124,6 @@ public class BoardDAO {
 			return vo;
 		}
 		
-		//수정 메서드
-		public void update(String bno,String title,String content) {
-			
-			String sql = "update board set title =?, content=? where bno =?";
-			
-			try {
-				conn=DriverManager.getConnection(URL, UID, UPW);
-				pstmt=conn.prepareStatement(sql);						
-				pstmt.setString(1, title);
-				pstmt.setString(2, content);
-				pstmt.setString(3, bno);
-				
-				pstmt.executeUpdate();
-				
-			} catch (Exception e) {
-				e.printStackTrace();
-			} finally {
-				JDBCUtil.close(conn, pstmt, rs);
-			}
-
-		}
 		//삭제기능
 		public int delete(String bno) {
 			int result=0;

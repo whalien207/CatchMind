@@ -14,8 +14,6 @@ public interface BoardService {
 	
 	BoardVO getContent(HttpServletRequest request, HttpServletResponse response);//조회
 	
-	void update(HttpServletRequest request, HttpServletResponse response);//정보수정
-	
 	int delete(HttpServletRequest request, HttpServletResponse response);//
 	
 }
