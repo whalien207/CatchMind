@@ -27,8 +27,8 @@ public class CommentsDAO {
 	}
 
 	public String URL = "jdbc:oracle:thin:@localhost:1521:xe";
-	public String UID = "jsp";
-	public String UPW = "jsp";
+	public String UID = "catchm";
+	public String UPW = "catchm";
 
 	private Connection conn;
 	private PreparedStatement pstmt;

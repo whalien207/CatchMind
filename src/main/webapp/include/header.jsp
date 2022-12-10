@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri ="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,21 +37,37 @@ https://templatemo.com/tm-560-astro-motion
                   <div class="collapse navbar-collapse" id="navbar-supported-content">
                     <ul class="navbar-nav mb-2 mb-lg-0">
                       <li class="nav-item selected">
-                        <a class="nav-link" aria-current="page" href="#0" data-no="1">Home</a>
+                        <a class="nav-link" aria-current="page" href="${pageContext.request.contextPath}/main.jsp" data-no="1">Home</a>
                         <div class="circle"></div>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#0" data-no="2">Gallery</a>
+                        <a class="nav-link" href="${pageContext.request.contextPath}/board/board_list.board" data-no="2">QUIZ</a>
+                        <div class="circle"></div>
+                      </li>
+                      <c:if test="${sessionScope.id == null}">
+                      <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.request.contextPath}/user/user_login.user" data-no="3">Login</a>
                         <div class="circle"></div>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#0" data-no="3">About</a>
+                        <a class="nav-link" href="${pageContext.request.contextPath}/user/user_join.user" data-no="4">Join</a>
                         <div class="circle"></div>
                       </li>
+                      </c:if>
+                      
+                      <c:if test="${sessionScope.id != null }">
                       <li class="nav-item">
-                        <a class="nav-link" href="#0" data-no="4">Contact</a>
+						<a class="nav-link" href="${pageContext.request.contextPath}/user/user_logout.user" data-no="3">Logout</a>
+						<div class="circle"></div>
+						<li class="nav-item">
+                        <a class="nav-link" href="${pageContext.request.contextPath}/user/user_mypage.user" data-no="4">Mypage</a>
                         <div class="circle"></div>
+                   		</li >
                       </li>
+                      
+                      </c:if>
+                      
+                      
                     </ul>
                   </div>
               </nav>

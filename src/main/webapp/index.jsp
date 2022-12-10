@@ -27,8 +27,8 @@
                 <div class="circle intro-circle-4"></div>
               </div>
               <div class="text-center">
-                <a href="#0" data-page-no="2" class="btn btn-primary tm-intro-btn tm-page-link">
-                  View Gallery
+                <a href="" data-page-no="2" class="btn btn-primary tm-intro-btn tm-page-link">
+                  QUIZ 풀러가기
                 </a>
               </div>            
             </div>            
