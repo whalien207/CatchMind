@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.example.board.service.BoardServiceImpl;
+
 import com.example.comments.model.CommentsVO;
 import com.example.comments.service.CommentsServiceImpl;
 
