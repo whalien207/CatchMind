@@ -31,4 +31,5 @@
   	<url-pattern>/board/board_write.board</url-pattern>
   </filter-mapping>
   -->
+
 </web-app>

@@ -5,6 +5,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import com.example.login.*;
+import com.example.util.JDBCUtil;
+
 public class UserDAO {
 	/*
 	 * UserDAO는 불필요하게 여러개 만들어질 필요가 없기 때문에 10명이 들어오면 10개가 생성되지만
@@ -174,6 +177,34 @@ public class UserDAO {
 		}
 		return result;
 	}
-	
+	//포인트 조회메서드
+	public UserVO inquirePoints(String id) {
+		UserVO vo = null;
 
+		String sql = "select * from users where id = ?";
+
+		try {
+			conn = DriverManager.getConnection(URL, UID, UPW);
+
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+
+			rs = pstmt.executeQuery();
+
+			if(rs.next()) {
+				String id2 = rs.getString("id");
+				String name2 = rs.getString("name");
+				String point2 = rs.getString("point");
+
+				vo = new UserVO(id2, null, name2, point2);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			JDBCUtil.close(conn, pstmt, rs);
+		}
+
+		return vo;
+	}
 }

@@ -4,6 +4,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.example.login.*;
+
 public class UserServiceImpl implements UserService{
 	//컨트롤러 역할을 분담
 	//가입처리
@@ -69,5 +71,16 @@ public class UserServiceImpl implements UserService{
 		} 
 		return result;
 	}
-
+	@Override
+	public UserVO inquirePoints(HttpServletRequest request, HttpServletResponse response) {
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
+		String name = request.getParameter("name");
+		String point = request.getParameter("point");
+		
+		UserDAO dao = UserDAO.getInstance();
+		UserVO vo = dao.inquirePoints(id);
+		
+		return vo;
+	}
 }
