@@ -34,7 +34,7 @@ public class MainController extends HttpServlet {
 		switch (command) {
 		//index.main으로 들어오면 index.jsp로 나감
 		case "/about.main":
-			request.getRequestDispatcher("about.jsp").forward(request, response);
+			request.getRequestDispatcher("main.jsp").forward(request, response);
 			break;
 			
 		default:

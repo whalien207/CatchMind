@@ -34,7 +34,7 @@ public class UserController extends HttpServlet {
 		//요청분기
 		String uri = request.getRequestURI();
 		String path = request.getContextPath();
-		
+		System.out.println(path);
 		String command = uri.substring(path.length());
 		
 		System.out.println("요청경로" + command);
@@ -90,8 +90,8 @@ public class UserController extends HttpServlet {
 				session.setAttribute("id", vo.getId());
 				session.setAttribute("name", vo.getName());
 				
-				//마이페이지
-				response.sendRedirect("user_mypage.user");
+				//메인화면
+				response.sendRedirect("../main.jsp");
 			}
 			
 			break;
@@ -101,7 +101,9 @@ public class UserController extends HttpServlet {
 			
 			HttpSession session = request.getSession();
 			session.invalidate();
-			response.sendRedirect(path + "/index.main");
+			response.sendRedirect(path + "/main.jsp");
+			
+			break;
 			
 		case "/user/user_mypage.user":
 
