@@ -40,9 +40,6 @@ public class UserController extends HttpServlet {
 		System.out.println("요청경로" + command);
 		UserService service = new UserServiceImpl();
 		
-		if(command.equals("/user/user_mypage_points.user")) {
-			request.getRequestDispatcher("user_mypage_points.jsp").forward(request, response);
-		}
 		switch (command) {
 		case "/user/user_join.user": 
 			
@@ -90,8 +87,8 @@ public class UserController extends HttpServlet {
 				session.setAttribute("id", vo.getId());
 				session.setAttribute("name", vo.getName());
 				
-				//마이페이지
-				response.sendRedirect("user_mypage.user");
+				//메인페이지
+				response.sendRedirect("../main.jsp");
 			}
 			
 			break;
@@ -101,23 +98,8 @@ public class UserController extends HttpServlet {
 			
 			HttpSession session = request.getSession();
 			session.invalidate();
-			response.sendRedirect(path + "/index.main");
+			response.sendRedirect(path + "/index.main"); //메인으로
 			
-		case "/user/user_mypage.user":
-
-			request.getRequestDispatcher("user_mypage.jsp").forward(request, response);
-
-
-			break;
-		case "/user/user_points.user":
-
-			UserVO vo1 = service.inquirePoints(request, response);
-			
-			request.setAttribute("vo", vo1);
-			
-			request.getRequestDispatcher("user_points.jsp").forward(request, response);
-			
-		
 			break;
 			
 
@@ -125,5 +107,6 @@ public class UserController extends HttpServlet {
 			break;
 		}
 	}
-}
 	
+
+}
