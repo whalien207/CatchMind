@@ -156,7 +156,7 @@ public class BoardDAO {
 		}
 		
 		//내가 쓴 글 조회메서드
-		public ArrayList<BoardVO> inquireBoard() {
+		public ArrayList<BoardVO> inquireBoard(String id) {
 			
 			ArrayList<BoardVO> list = new ArrayList<>();
 			
@@ -166,13 +166,13 @@ public class BoardDAO {
 				conn = DriverManager.getConnection(URL, UID, UPW);
 				
 				pstmt = conn.prepareStatement(sql);
-				pstmt.setString(1, "id");
+				pstmt.setString(1, id);
 				
 				rs = pstmt.executeQuery();
 				
 				while(rs.next()) {
 					int bno = rs.getInt("bno");
-					String id = rs.getString("id");
+					String id2 = rs.getString("id");
 					String title = rs.getString("title");
 					String img = rs.getString("img");
 					Timestamp regdate = rs.getTimestamp("regdate");
@@ -181,7 +181,7 @@ public class BoardDAO {
 					String status = rs.getString("status");
 					String hint = rs.getString("hint");
 						
-					BoardVO vo = new BoardVO(bno, id, title, img, regdate, hit, answer, status, hint);
+					BoardVO vo = new BoardVO(bno, id2, title, img, regdate, hit, answer, status, hint);
 					list.add(vo);
 					
 							

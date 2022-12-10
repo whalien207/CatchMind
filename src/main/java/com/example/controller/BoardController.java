@@ -106,7 +106,7 @@ public class BoardController extends HttpServlet {
 			ArrayList<BoardVO> list = service.inquireBoard(request, response);
 			request.setAttribute("list", list);
 			
-			request.getRequestDispatcher("user_content.jsp").forward(request, response);
+			request.getRequestDispatcher("board_list.jsp").forward(request, response);
 		}
 	}
 

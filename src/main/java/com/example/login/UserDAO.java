@@ -114,7 +114,7 @@ public class UserDAO {
 				String pw2 = rs.getString("pw");
 				String point = rs.getString("point");
 				
-				vo = new UserVO(name, id2, pw2, point);
+				vo = new UserVO(id2,pw2,name,point);
 				
 			}
 			

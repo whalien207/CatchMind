@@ -60,7 +60,7 @@ public class BoardServiceImpl implements BoardService{
 		
 		//DAO
 		BoardDAO dao = BoardDAO.getInstance();
-		ArrayList<BoardVO> list = dao.inquireBoard();
+		ArrayList<BoardVO> list = dao.inquireBoard(id);
 		
 		return list;
 	}
