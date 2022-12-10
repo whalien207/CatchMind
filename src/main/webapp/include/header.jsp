@@ -41,7 +41,7 @@ https://templatemo.com/tm-560-astro-motion
                         <div class="circle"></div>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#0" data-no="2">Gallery</a>
+                        <a class="nav-link" href="${pageContext.request.contextPath}/board/board_list.board" data-no="2">QUIZ</a>
                         <div class="circle"></div>
                       </li>
                       <c:if test="${sessionScope.id == null}">
@@ -50,7 +50,7 @@ https://templatemo.com/tm-560-astro-motion
                         <div class="circle"></div>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#0" data-no="4">Join</a>
+                        <a class="nav-link" href="${pageContext.request.contextPath}/user/user_join.user" data-no="4">Join</a>
                         <div class="circle"></div>
                       </li>
                       </c:if>
