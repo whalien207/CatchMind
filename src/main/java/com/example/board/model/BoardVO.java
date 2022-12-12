@@ -1,8 +1,9 @@
-package com.example.controller;
+package com.example.board.model;
 
 import java.sql.Timestamp;
 
 public class BoardVO {
+
 	private int bno;
 	private String id;
 	private String title;
@@ -14,7 +15,6 @@ public class BoardVO {
 	private String hint;
 	
 	public BoardVO() {
-	
 	}
 
 	public BoardVO(int bno, String id, String title, String img, Timestamp regdate, int hit, String answer,
@@ -102,6 +102,5 @@ public class BoardVO {
 	public void setHint(String hint) {
 		this.hint = hint;
 	}
-	
 	
 }

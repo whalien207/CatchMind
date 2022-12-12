@@ -5,6 +5,7 @@
 <%@ include file="../include/header.jsp"%>
 <div class="container">
 	<h3>캐치마인드</h3>
+	<input type="button" value="글 작성" class="btn btn-default" onclick="location.href='board_write.board' ">
 
 	<div class="row">
 		<div class="box">
@@ -18,8 +19,7 @@
 			<div class="row">
 					<c:forEach var="vo" items="${list }" varStatus="num">
 						<div class="col-sm-4 text-center">
-							<a href=""><img class="img-responsive"
-								src="../img/${vo.img }" alt="그림"></a>
+							<a href="board_content.board?bno=${vo.bno }"><img class="img-responsive" src="../img/${vo.img }" alt="그림"></a>
 							<h3>${vo.id }님이 그린 그림</h3>
 						</div>
 					</c:forEach>

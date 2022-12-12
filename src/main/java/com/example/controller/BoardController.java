@@ -12,6 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.example.board.model.BoardVO;
+import com.example.board.service.BoardServiceImpl;
+import com.example.comments.model.CommentsVO;
+
 
 
 
@@ -36,18 +40,18 @@ public class BoardController extends HttpServlet {
 		//서비스객체
 		BoardServiceImpl service = new BoardServiceImpl();
 		
-		//세션
-		
 		// 요청분기
 		String uri = request.getRequestURI();
 		String path = request.getContextPath();
 
 		String command = uri.substring(path.length());
 
-		HttpSession session = request.getSession();
+		HttpSession session;
 		System.out.println("요청경로:" + command);
+
 		if (command.equals("/board/board_write.board")) { // 등록화면
-			if(session.getAttribute("user_id") == null) {
+			session = request.getSession();
+			if(session.getAttribute("id") == null) {
 				response.sendRedirect("../user/user_login.user");
 				return;
 			}
@@ -63,8 +67,19 @@ public class BoardController extends HttpServlet {
 			request.getRequestDispatcher("board_list.jsp").forward(request, response);
 			
 		} else if (command.equals("/board/board_content.board")) { // 상세내용화면
+			session = request.getSession();
+			//session.setAttribute("user_id", user_id);
+			
+			//1.해당 글 번호에 해당하는 글 읽어오기 BoardVO로 읽어오기
 			BoardVO vo = service.getContent(request, response);
 			request.setAttribute("vo", vo);
+			
+			//2.해당 글에 달린 댓글들 가지고 오기 ArrayList<CommentVO>로.
+			ArrayList<CommentsVO> list= service.getComment(request, response);
+			request.setAttribute("list", list);
+			
+			String bno = request.getParameter("bno");
+			request.setAttribute("bno", bno);
 			request.getRequestDispatcher("board_content.jsp").forward(request, response);
 			
 		} else if (command.equals("/board/board_modify.board")) { // 수정화면
@@ -107,6 +122,14 @@ public class BoardController extends HttpServlet {
 			request.setAttribute("list", list);
 			
 			request.getRequestDispatcher("board_list.jsp").forward(request, response);
+			
+		} else if(command.equals("/board/writeComment.board")) {
+			service.writeComment(request, response);
+			response.sendRedirect("board_content.board?bno=" + request.getParameter("bno"));
+			
+		} else if(command.equals("/board/writeContent.board")) {
+			service.writeContent(request, response);
+			response.sendRedirect("board_list.board");
 		}
 	}
 
