@@ -124,8 +124,24 @@ public class BoardController extends HttpServlet {
 			request.getRequestDispatcher("board_list.jsp").forward(request, response);
 			
 		} else if(command.equals("/board/writeComment.board")) {
-			service.writeComment(request, response);
-			response.sendRedirect("board_content.board?bno=" + request.getParameter("bno"));
+			int result = service.writeComment(request, response);
+			
+			//업데이트 되었다 (= 포인트 획득)
+			String msg = "";
+			if(result == 1) {
+				msg = "정답입니다. (+10 point)";
+			}else {
+				msg = "정답이 아닙니다.";
+			}
+			
+			response.setContentType("text/html; charset=utf-8");
+			PrintWriter out=response.getWriter();
+			out.println("<script>");
+			out.println("alert('"+msg+"');");
+			out.println("location.href='board_content.board?bno=" + request.getParameter("bno")+"';");
+			out.println("</script>");
+			
+			//response.sendRedirect("board_content.board?bno=" + request.getParameter("bno"));
 			
 		} else if(command.equals("/board/writeContent.board")) {
 			service.writeContent(request, response);

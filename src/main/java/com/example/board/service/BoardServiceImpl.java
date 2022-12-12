@@ -12,6 +12,7 @@ import com.example.board.model.BoardDAO;
 import com.example.board.model.BoardVO;
 import com.example.comments.model.CommentsDAO;
 import com.example.comments.model.CommentsVO;
+import com.example.login.UserDAO;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
@@ -29,7 +30,7 @@ public class BoardServiceImpl implements BoardService{
 	}
 	
 	@Override //댓글 등록
-	public void writeComment(HttpServletRequest request, HttpServletResponse response) {
+	public int writeComment(HttpServletRequest request, HttpServletResponse response) {
 		String comment = request.getParameter("comment");
 		String bno = request.getParameter("bno");
 		String id = request.getParameter("id");
@@ -38,6 +39,8 @@ public class BoardServiceImpl implements BoardService{
 		BoardDAO b_dao = BoardDAO.getInstance();
 		BoardVO bvo = b_dao.getContent(bno);
 		
+		int result = 0;
+		
 		//만약 등록한 답과 입력한 댓글이 일치한다면 (= 정답)
 		if(bvo.getAnswer().equals(comment)) {
 			//1.user에게 포인트 적립
@@ -45,15 +48,21 @@ public class BoardServiceImpl implements BoardService{
 			String user = (String)session.getAttribute("id");
 			
 			//user id로 조건을 주고 포인트 update해주기
-			//UserDAO u_dao = UserDAO.getInstance();
-			//u_dao.updatePoint(user);
+			UserDAO u_dao = UserDAO.getInstance();
+			int point = u_dao.inquirePoints(user) + 10;
+			
+			u_dao.updatePoint(user, point);
 			
 			//2.baord에 status변경
 			b_dao.updateStatus(bno);
+			
+			result = 1;
 		}
 		
 		CommentsDAO c_dao = CommentsDAO.getInstance();
 		c_dao.writeComment(comment, bno, id);
+		
+		return result;
 	}
 	
 	@Override //글 등록

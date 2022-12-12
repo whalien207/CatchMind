@@ -177,12 +177,11 @@ public class UserDAO {
 		}
 		return result;
 	}
+	
 	//포인트 조회메서드
-	public UserVO inquirePoints(String id) {
-		UserVO vo = null;
-
-		String sql = "select * from users where id = ?";
-
+	public int inquirePoints(String id) {
+		String sql = "select point from users where id = ?";
+		int point = 0;
 		try {
 			conn = DriverManager.getConnection(URL, UID, UPW);
 
@@ -192,11 +191,7 @@ public class UserDAO {
 			rs = pstmt.executeQuery();
 
 			if(rs.next()) {
-				String id2 = rs.getString("id");
-				String name2 = rs.getString("name");
-				String point2 = rs.getString("point");
-
-				vo = new UserVO(id2, null, name2, point2);
+				point = rs.getInt("point");
 			}
 
 		} catch (Exception e) {
@@ -205,6 +200,29 @@ public class UserDAO {
 			JDBCUtil.close(conn, pstmt, rs);
 		}
 
-		return vo;
+		return point;
+	}
+	
+	public void updatePoint(String user, int point) {
+		System.out.println(user);
+		System.out.println(point);
+		
+		String sql = "update users set point = ? where id = ?";
+		
+		
+		try {
+			conn = DriverManager.getConnection(URL, UID, UPW);
+			//2. 포인트에 +10점하여 update
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, point);
+			pstmt.setString(2, user);
+			
+			pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			JDBCUtil.close(conn, pstmt, rs);
+		}
 	}
 }
