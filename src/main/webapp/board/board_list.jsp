@@ -19,10 +19,11 @@
 			</div>
 			<div class="row">
 					<c:forEach var="vo" items="${list }" varStatus="num">
-						<div class="col-sm-4 text-center">
+						<div class="col-sm-4 text-center" style="padding-bottom:40px">
 							<a href="board_content.board?bno=${vo.bno }">
-							<img class="img-responsive" src="../img/${vo.img }" alt="그림" width=250 height=250></a>
-							<h3>${vo.id }님이 그린 그림</h3>
+							<h5>[${vo.status }]</h5>
+							<img class="img-responsive" src="../img/${vo.img }" alt="그림" width=250 height=250>
+							<h3>${vo.id }님이 그린 그림</h3></a>
 						</div>
 					</c:forEach>
 			</div>
