@@ -7,7 +7,7 @@
 
 <div class="cd-hero-slider mb-0 py-5">
 	<!-- 이미지 출력 -->
-	<div align="center">
+	<div align="center" style="padding-bottom:30px">
 		<img src="../img/${vo.img }" width=512 height=384></img>
 	</div>
 
@@ -21,7 +21,7 @@
 						<td align="left">${vo.id }</td>
 						<td colspan="2"></td>
 						<td align="right"><fmt:formatDate value="${vo.regdate }"
-								pattern="yyyy-MM-dd HH시 mm분" /></td>
+								pattern="yyyy-MM-dd HH:분" /></td>
 					</tr>
 					<tr style="color: white;">
 						<td colspan="5" align="left">${vo.comments }</td>
