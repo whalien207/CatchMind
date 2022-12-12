@@ -60,7 +60,7 @@
 			 onclick = "location.href ='경로' 
 			-->
 
-			<input type="button" value="Login" onclick="location.herf='user_login.user' ">
+			<input type="reset" value="Reset" >
 
 		
 		</form>
