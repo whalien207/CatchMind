@@ -5,7 +5,7 @@
 <%@ include file="../include/header.jsp"%>
 <div class="container">
 	<h3>캐치마인드</h3>
-	<input type="button" value="글 작성" class="btn btn-primary tm-intro-btn tm-page-link" onclick="location.href='../board/board_write.board' ">
+	<input type="button" value="글 작성"  onclick="location.href='../board/board_write.board' ">
 
 	<div class="row">
 		<div class="box">

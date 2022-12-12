@@ -51,7 +51,7 @@ https://templatemo.com/tm-560-astro-motion
                   </button>
                   <div class="collapse navbar-collapse" id="navbar-supported-content">
                     <ul class="navbar-nav mb-2 mb-lg-0">
-                      <li class="nav-item selected">
+                      <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="${pageContext.request.contextPath}/main.jsp" data-no="1">Home</a>
                         <div class="circle"></div>
                       </li>
