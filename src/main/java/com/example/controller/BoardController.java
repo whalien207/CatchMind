@@ -67,20 +67,32 @@ public class BoardController extends HttpServlet {
 			request.getRequestDispatcher("board_list.jsp").forward(request, response);
 			
 		} else if (command.equals("/board/board_content.board")) { // 상세내용화면
-			session = request.getSession();
-			//session.setAttribute("user_id", user_id);
 			
 			//1.해당 글 번호에 해당하는 글 읽어오기 BoardVO로 읽어오기
 			BoardVO vo = service.getContent(request, response);
-			request.setAttribute("vo", vo);
+			if(vo != null) { //글이 있다면 
+				request.setAttribute("vo", vo);
+				
+				//2.해당 글에 달린 댓글들 가지고 오기 ArrayList<CommentVO>로.
+				ArrayList<CommentsVO> list= service.getComment(request, response);
+				request.setAttribute("list", list);
+				
+				String bno = request.getParameter("bno");
+				request.setAttribute("bno", bno);
+				request.getRequestDispatcher("board_content.jsp").forward(request, response);
+				
+			}
+			//글이 삭제되었다면
+			session = request.getSession();
+			String id = (String)session.getAttribute("id");
 			
-			//2.해당 글에 달린 댓글들 가지고 오기 ArrayList<CommentVO>로.
-			ArrayList<CommentsVO> list= service.getComment(request, response);
-			request.setAttribute("list", list);
+			response.setContentType("text/html; charset=utf-8");
+			PrintWriter out=response.getWriter();
+			out.println("<script>");
+			out.println("alert('삭제된 글 입니다.');");
+			out.println("location.href='../user/user_comments.comments?id="+id+"';");
+			out.println("</script>");
 			
-			String bno = request.getParameter("bno");
-			request.setAttribute("bno", bno);
-			request.getRequestDispatcher("board_content.jsp").forward(request, response);
 			
 		} else if (command.equals("/board/board_modify.board")) { // 수정화면
 			//조회한 글에 대한 정보 조회 재활용
