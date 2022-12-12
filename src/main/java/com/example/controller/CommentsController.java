@@ -43,7 +43,6 @@ public class CommentsController extends HttpServlet {
 		HttpSession session = request.getSession();
 		
 		if(command.equals("/user/user_comments.comments")) {
-			
 			ArrayList<CommentsVO> list = service.inquireComments(request, response);
 			request.setAttribute("list", list);
 			

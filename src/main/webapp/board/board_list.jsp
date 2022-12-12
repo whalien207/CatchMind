@@ -7,6 +7,7 @@
 	<h3>캐치마인드</h3>
 	<input type="button" value="글 작성"  onclick="location.href='board_write.board' ">
 
+
 	<div class="row">
 		<div class="box">
 			<div class="col-lg-12">

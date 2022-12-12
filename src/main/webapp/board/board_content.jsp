@@ -23,7 +23,9 @@
 						<td align="right"><fmt:formatDate value="${vo.regdate }"
 								pattern="yyyy-MM-dd HH:mm" /></td>
 					</tr>
-					<tr style="color: white;">
+
+					<tr style="color:white;">
+
 						<td colspan="5" align="left">${vo.comments }</td>
 					</tr>
 				</table>

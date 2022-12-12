@@ -213,7 +213,6 @@ public class BoardDAO {
 				BoardVO vo = new BoardVO(bno, id2, title, img, regdate, hit, answer, status, hint);
 				list.add(vo);
 				
-						
 			}
 			
 		} catch (Exception e) {

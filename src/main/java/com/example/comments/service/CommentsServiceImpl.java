@@ -13,12 +13,10 @@ public class CommentsServiceImpl implements CommentsService{
 	@Override
 	public ArrayList<CommentsVO> inquireComments(HttpServletRequest request, HttpServletResponse response) {
 		
-		int bno = Integer.parseInt(request.getParameter("bno"));
+		String id = request.getParameter("id");
 		
 		CommentsDAO dao = CommentsDAO.getInstance();
-		ArrayList<CommentsVO> list = dao.inquireComments();
-		
-		
+		ArrayList<CommentsVO> list = dao.inquireComments(id);
 		
 		return list;
 	}

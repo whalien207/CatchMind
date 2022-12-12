@@ -27,6 +27,25 @@ font-family: 'Rubik Puddles', cursive;
 
 </style>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik+Spray+Paint&display=swap" rel="stylesheet">
+    <style> @import url('https://fonts.googleapis.com/css2?family=Rubik+Spray+Paint&display=swap'); 
+	.aaa{
+	font-family: 'Rubik Spray Paint', cursive;
+	font-size: 40px;
+	border-bottom: 2px solid white;
+	color: #99FF66;
+    border-bottom: 1px solid ;
+	}
+	.aaa:hover{
+	color : #99FF66;
+	}
+	
+	.aaa:focus{
+	color : #99FF66;
+	}
+		
+</style>
+
 <!--
     
 TemplateMo 560 Astro Motion
@@ -51,32 +70,36 @@ https://templatemo.com/tm-560-astro-motion
                   </button>
                   <div class="collapse navbar-collapse" id="navbar-supported-content">
                     <ul class="navbar-nav mb-2 mb-lg-0">
-                      <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="${pageContext.request.contextPath}/main.jsp" data-no="1">Home</a>
-                        <div class="circle"></div>
+
+                      <li class="nav-item ">
+
+                        <a class="aaa" aria-current="page" href="${pageContext.request.contextPath}/main.jsp" data-no="1">Home</a>
+                        <div style="padding-top:10px">
+                      	<div class="circle"></div>
+                      	</div>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="${pageContext.request.contextPath}/board/board_list.board" data-no="2">QUIZ</a>
-                        <div class="circle"></div>
+                        <a class="aaa" href="${pageContext.request.contextPath}/board/board_list.board" data-no="2">Quiz</a>
+                      <div class="circle"></div>
                       </li>
                       <c:if test="${sessionScope.id == null}">
                       <li class="nav-item">
-                        <a class="nav-link" href="${pageContext.request.contextPath}/user/user_login.user" data-no="3">Login</a>
-                        <div class="circle"></div>
+                        <a class="aaa" href="${pageContext.request.contextPath}/user/user_login.user" data-no="3">Login</a>
+                      <div class="circle"></div>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="${pageContext.request.contextPath}/user/user_join.user" data-no="4">Join</a>
-                        <div class="circle"></div>
+                        <a class="aaa" href="${pageContext.request.contextPath}/user/user_join.user" data-no="4">Join</a>
+                      <div class="circle"></div>
                       </li>
                       </c:if>
                       
                       <c:if test="${sessionScope.id != null }">
                       <li class="nav-item">
-						<a class="nav-link" href="${pageContext.request.contextPath}/user/user_logout.user" data-no="3">Logout</a>
+						<a class="aaa" href="${pageContext.request.contextPath}/user/user_logout.user" data-no="3">Logout</a>
 						<div class="circle"></div>
 						<li class="nav-item">
-                        <a class="nav-link" href="${pageContext.request.contextPath}/user/user_mypage.user" data-no="4">Mypage</a>
-                        <div class="circle"></div>
+                        <a class="aaa" href="${pageContext.request.contextPath}/user/user_mypage.user" data-no="4">Mypage</a>
+                   		<div class="circle"></div>
                    		</li >
                       </li>
                       
