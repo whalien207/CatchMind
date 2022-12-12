@@ -46,15 +46,19 @@
 					<td><input type="text" name = "name" pattern = "[가-힣]{2,}"></td>
 				
 				</tr>
-			
+				<tr>
+				
+				</tr>
+				
 			
 			</table>
+		
 			<input type="submit" value="가입">
 			<!--
 			 JS로 기능을 붙임
 			 onclick = "location.href ='경로' 
 			-->
-			<input type="button" value="로그인하기" onclick="location.herf='user_login.user' ">
+			&nbsp;&nbsp;<input type="button" value="로그인하기" onclick="location.herf='user_login.user' ">
 			
 		</form>
 	</div>

@@ -12,6 +12,21 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath }/css/bootstrap.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath }/css/slick.css" type="text/css" /> 
     <link rel="stylesheet" href="${pageContext.request.contextPath }/css/templatemo-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nabla&family=Rampart+One&family=Rubik+Puddles&display=swap" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nabla&family=Rampart+One&family=Rubik+Puddles&display=swap');
+.main-logo{
+font-size: 90px;
+font-family: 'Nabla', cursive;
+font-family: 'Rampart One', cursive;
+font-family: 'Rubik Puddles', cursive;
+
+}
+
+</style>
+
 <!--
     
 TemplateMo 560 Astro Motion
@@ -30,7 +45,7 @@ https://templatemo.com/tm-560-astro-motion
           <div class="col-xs-12">
             <div class="cd-slider-nav">
               <nav class="navbar navbar-expand-lg" id="tm-nav">
-                <a class="navbar-brand" href="#">Catch Mind</a>
+                <a class="main-logo" href="${pageContext.request.contextPath}/main.jsp" ><strong>Catch Mind</strong></a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-supported-content" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
