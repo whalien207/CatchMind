@@ -5,7 +5,7 @@
 
 <section>
 	<div align="center">
-		<h3>회원가입</h3>
+		<h3>Hello! Sign Up Here</h3>
 		<!-- 
 		태그에서 제공하는 input유효성 검사
 		pattern ="js정규표현식"
@@ -31,18 +31,18 @@
 			<span style="color:red;">${msg }</span>
 			<table>
 				<tr>
-					<td>아이디</td>
+					<td>ID</td>
 					<td><input type="text" name = "id" placeholder="4~8글자 영문자숫자" pattern = "\w{4,8}" required="required"></td>
 				
 				</tr>
 				<tr>
-					<td>비밀번호</td>
+					<td>PW</td>
 					<td><input type="password" name = "pw" pattern = "\w{4,8}"></td>
 				
 				</tr>
 			
 				<tr>
-					<td>이름</td>
+					<td>Name</td>
 					<td><input type="text" name = "name" pattern = "[가-힣]{2,}"></td>
 				
 				</tr>
@@ -52,14 +52,17 @@
 				
 			
 			</table>
-		
-			<input type="submit" value="가입">
+
+			<input type="submit" value="Join">
+
 			<!--
 			 JS로 기능을 붙임
 			 onclick = "location.href ='경로' 
 			-->
-			&nbsp;&nbsp;<input type="button" value="로그인하기" onclick="location.herf='user_login.user' ">
-			
+
+			<input type="button" value="Login" onclick="location.herf='user_login.user' ">
+
+		
 		</form>
 	</div>
 </section>
