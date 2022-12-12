@@ -7,8 +7,9 @@
     
 <section>
 	<div align="center">
-		${sessionScope.id}
-		<b>(${sessionScope.name})</b>님의 포인트: ${p_vo.point}
+		<h3>${sessionScope.id}
+		<b>(${sessionScope.name})</b>님의 포인트: ${p_vo.point} </h3>
+		
 	</div>
 </section>    
     

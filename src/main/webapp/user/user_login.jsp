@@ -12,7 +12,8 @@
     			<input type="text" name="id" placeholder="ID" required style="heigth:30px; width:320px"><br>
     			<input type="password" name="pw" placeholder="Password" required style="heigth:30px; width:320px"><br>
     			<span style="color: red;">${msg }</span><br>
-    			<input type="submit" value="Login" class="btn-primary pull">
+    		
+    			<button class="custom-btn btn-12"><span>GO!</span><span>Login</span></button>
     			
     		</form>
     	</div>

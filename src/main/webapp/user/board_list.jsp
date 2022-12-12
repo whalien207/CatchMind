@@ -5,7 +5,9 @@
 <%@ include file="../include/header.jsp"%>
 <div class="container">
 	<h3>내가 작성한 글</h3>
-	<input type="button" value="글 작성"  onclick="location.href='../board/board_write.board' ">
+	<button class="w-btn-outline w-btn-green2-outline" type="button" onclick="location.href='board_write.board' ">
+        글 작성하기
+    </button>
 
 	<div class="row">
 		<div class="box">

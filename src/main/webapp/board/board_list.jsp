@@ -4,9 +4,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ include file="../include/header.jsp"%>
 <div class="container">
-	<h3>캐치마인드</h3>
-	<input type="button" value="글 작성"  onclick="location.href='board_write.board' ">
 
+	<button class="w-btn-outline w-btn-green2-outline" type="button" onclick="location.href='board_write.board' ">
+        글 작성하기
+    </button>
+	
 
 	<div class="row">
 		<div class="box">

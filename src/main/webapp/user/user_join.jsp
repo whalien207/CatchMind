@@ -53,14 +53,14 @@
 			
 			</table>
 
-			<input type="submit" value="Join">
+			<button class="custom-btn btn-12"><span>COME!</span><span>Join</span></button>
 
 			<!--
 			 JS로 기능을 붙임
 			 onclick = "location.href ='경로' 
 			-->
 
-			<input type="reset" value="Reset" >
+			<button class="custom-btn btn-12" type="reset"><span>Clear</span><span>Reset</span></button>
 
 		
 		</form>

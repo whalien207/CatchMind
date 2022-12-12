@@ -7,9 +7,20 @@
 
 <div class="cd-hero-slider mb-0 py-5">
 	<!-- 이미지 출력 -->
-	<div align="center" style="padding-bottom:30px">
+	<div align="center" style="padding-bottom: 15px">
 		<img src="../img/${vo.img }" width=512 height=384></img>
+
 	</div>
+	<div align="center" style="padding-bottom: 5px">
+		[5 Point 사용하여 힌트보기]
+		<button class="w-btn w-btn-gra3 w-btn-gra-anim" type="button" onclick="alert('힌트 : ${vo.hint}');" style="cursor:pointer">
+			Hint!</button>
+
+
+	 <button class="w-btn w-btn-gra3 w-btn-gra-anim" type="button" id="question">Hint!</button>
+
+	</div>
+
 
 	<!-- 글에 작성된 댓글 리스트 보기 -->
 	<c:forEach var="vo" items="${list }">
@@ -24,7 +35,7 @@
 								pattern="yyyy-MM-dd HH:mm" /></td>
 					</tr>
 
-					<tr style="color:white;">
+					<tr style="color: white;">
 
 						<td colspan="5" align="left">${vo.comments }</td>
 					</tr>
@@ -57,18 +68,25 @@
 								class="form-control"
 								style="text-align: center; display: block; margin: 0 auto;">
 							</td>
-							<td style="border-bottom: none;" valign="middle"><input
-								type="submit" class="btn-primary pull" value="댓글 작성"></td>
+							<td style="border-bottom: none;" valign="middle">
+								<button class="w-btn-outline w-btn-blue-outline" type="submit">
+									댓글 작성</button>
+							</td>
 						</tr>
 					</table>
 				</form>
 			</div>
 		</div>
 	</c:if>
-	<input type="button" name="list" value="삭제하기" style="float:right" onclick="location.href='board_delete.board?bno=${bno}&writer=${vo.id }'">
-	<input type="button" name="delete" value="글 목록" style="float:right" onclick="location.href='board_list.board'">
-	
-	
+
+	<button class="w-btn-outline w-btn-gray-outline" style="float: right"
+		type="button"
+		onclick="location.href='board_delete.board?bno=${bno}&writer=${vo.id }'">
+		글 삭제하기</button>
+	<button class="w-btn-outline w-btn-gray-outline" style="float: right"
+		type="button" onclick="location.href='board_list.board'">글 목록
+	</button>
+
 </div>
 
 <%@ include file="../include/footer.jsp"%>

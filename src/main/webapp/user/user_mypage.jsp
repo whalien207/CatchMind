@@ -5,16 +5,19 @@
     
 <section>
 	<div align="center">
-		${sessionScope.id}
+		<h3>${sessionScope.id}
 		<b>(${sessionScope.name})</b>님 환영합니다
-
+		</h3>
 		<div>
-		<input type="button" value="포인트 조회"
-				onclick="location.href='user_mypage_points.user?id=${sessionScope.id}'">
-		<input type="button" value="내가 쓴 글 조회"
-				onclick="location.href='user_content.board?id=${sessionScope.id}'">
-		<input type="button" value="내가 쓴 댓글 조회"
-				onclick="location.href='user_comments.comments?id=${sessionScope.id}'">
+		    <button class="w-btn w-btn-skin" type="button" onclick="location.href='user_mypage_points.user?id=${sessionScope.id}'">
+        포인트 조회
+    </button>
+        <button class="w-btn w-btn-skin" type="button" onclick="location.href='user_content.board?id=${sessionScope.id}'">
+        내가 쓴 글 조회
+    </button>
+        <button class="w-btn w-btn-skin" type="button" onclick="location.href='user_comments.comments?id=${sessionScope.id}'">
+        내가 쓴 댓글 조회
+    </button>
 		</div>
 	
 	</div>
