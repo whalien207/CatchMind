@@ -6,12 +6,12 @@
     <section>
     	<div align = "center">
     		<form action="loginForm.user" method="post">
-    			<h3>로그인화면</h3>
+    			<h3>Please sign in</h3>
     			
-    			<input type="text" name="id" placeholder="아이디"><br>
-    			<input type="password" name="pw" placeholder="비밀번호"><br>
+    			<input type="text" name="id" placeholder="ID" required style="heigth:30px; width:320px"><br>
+    			<input type="password" name="pw" placeholder="Password" required style="heigth:30px; width:320px"><br>
     			<span style="color: red;">${msg }</span><br>
-    			<input type="submit" value="로그인" class="btn btn-default">
+    			<input type="submit" value="Login" class="btn-primary pull">
     			
     		</form>
     	</div>

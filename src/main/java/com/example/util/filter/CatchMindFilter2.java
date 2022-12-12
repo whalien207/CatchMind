@@ -37,7 +37,7 @@ public class CatchMindFilter2 implements Filter {
 		//각 요청에 넘어오는 writer 파라미터
 		String writer = request.getParameter("writer");
 		
-		//세션에 저장된 user_id
+		//세션에 저장된 id
 		HttpSession session = req.getSession();
 		String id = (String)session.getAttribute("id");
 		

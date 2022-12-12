@@ -37,7 +37,7 @@ public class CatchMindFilter implements Filter {
 		HttpSession session = req.getSession();
 		String id = (String)session.getAttribute("id");
 		
-		//user_id == null이라면 권한이 없다는 의미
+		//id == null이라면 권한이 없다는 의미
 		if(id == null) {
 			String path = req.getContextPath(); //절대경로라 좀 더 안전함
 			
