@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import com.example.comments.model.CommentsVO;
 import com.example.util.JDBCUtil;
 
 public class CommentsDAO {
@@ -69,5 +70,54 @@ public class CommentsDAO {
 		return list;
 	}
 
+	//bno번호로 해당 글에 맞는 comment읽어오기 (oder by 날짜 순서로..)
+	public ArrayList<CommentsVO> getComment(String bno) {
+		
+		ArrayList<CommentsVO> commentList = new ArrayList<>();
+		String sql = "select * from comments where bno = ? order by cno";
+		
+		try {
+			conn = DriverManager.getConnection(URL, UID, UPW);
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, bno);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				CommentsVO vo = new CommentsVO();
+				vo.setCno(rs.getInt("cno"));
+				vo.setComments(rs.getString("comments"));
+				vo.setBno(rs.getInt("bno"));
+				vo.setId(rs.getString("id"));
+				vo.setRegdate(rs.getTimestamp("regdate"));
+				
+				commentList.add(vo);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			JDBCUtil.close(conn, pstmt, rs);
+		}
+		return commentList;
+	}
+	
+	public void writeComment(String comment, String bno, String id) {
+		String sql = "insert into comments values(comment_seq.nextval, ?, ?, ?, sysdate)";
+		
+		try {
+			conn = DriverManager.getConnection(URL, UID, UPW);
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, comment);
+			pstmt.setString(2, bno);
+			pstmt.setString(3, id);
+			
+			pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			JDBCUtil.close(conn, pstmt, rs);
+		}
+	}
 
 }
