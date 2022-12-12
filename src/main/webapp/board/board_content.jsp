@@ -63,7 +63,7 @@
 			</div>
 		</div>
 	</c:if>
-	<input type="button" name="list" value="삭제하기" style="float:right" onclick="location.href='board_delete.board?bno=${bno}'">
+	<input type="button" name="list" value="삭제하기" style="float:right" onclick="location.href='board_delete.board?bno=${bno}&writer=${vo.id }'">
 	<input type="button" name="delete" value="글 목록" style="float:right" onclick="location.href='board_list.board'">
 	
 	

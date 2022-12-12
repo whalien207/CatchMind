@@ -23,10 +23,10 @@ import javax.servlet.http.HttpSession;
 			"/board/board_content.board",
 			"/board/board_modify.board",
 			"/board/registForm.board",
-			"/board/board_delete.board"})
+			"/board/board_delete.board",
+			"/board/writeContent.board",
+			"/board/writeComment.board"})
 public class CatchMindFilter implements Filter {
-       
-
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		//필터 실질 역할 담당
@@ -36,6 +36,7 @@ public class CatchMindFilter implements Filter {
 		//req에서 세션을 얻음
 		HttpSession session = req.getSession();
 		String id = (String)session.getAttribute("id");
+		System.out.println("id");
 		
 		//id == null이라면 권한이 없다는 의미
 		if(id == null) {
