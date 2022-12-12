@@ -36,7 +36,7 @@ public class CommentsDAO {
 
 
 	//내가 쓴 댓글 조회메서드
-	public ArrayList<CommentsVO> inquireComments() {
+	public ArrayList<CommentsVO> inquireComments(int bno) {
 
 		ArrayList<CommentsVO> list = new ArrayList<>();
 
@@ -46,18 +46,18 @@ public class CommentsDAO {
 			conn = DriverManager.getConnection(URL, UID, UPW);
 
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, "bno");
+			pstmt.setInt(1, bno);
 
 			rs = pstmt.executeQuery();
 
 			while(rs.next()) {
 				int cno = rs.getInt("cno");
 				String comments = rs.getString("comments");
-				int bno = rs.getInt("bno");
+				int bno2 = rs.getInt("bno");
 				String id = rs.getString("id");
 				Timestamp regdate = rs.getTimestamp("regdate");			
 
-				CommentsVO vo = new CommentsVO(cno, comments, bno, id, regdate);
+				CommentsVO vo = new CommentsVO(cno, comments, bno2, id, regdate);
 				list.add(vo);
 			}
 

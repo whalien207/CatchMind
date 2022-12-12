@@ -42,6 +42,7 @@ public class CommentsController extends HttpServlet {
 		//세션
 		HttpSession session = request.getSession();
 		
+		//내가 쓴 댓글 조회하기 
 		if(command.equals("/user/user_comments.comments")) {
 			
 			ArrayList<CommentsVO> list = service.inquireComments(request, response);

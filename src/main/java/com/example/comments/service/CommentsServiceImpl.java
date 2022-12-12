@@ -16,7 +16,7 @@ public class CommentsServiceImpl implements CommentsService{
 		int bno = Integer.parseInt(request.getParameter("bno"));
 		
 		CommentsDAO dao = CommentsDAO.getInstance();
-		ArrayList<CommentsVO> list = dao.inquireComments();
+		ArrayList<CommentsVO> list = dao.inquireComments(bno);
 		
 		
 		
