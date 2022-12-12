@@ -4,7 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ include file="../include/header.jsp"%>
 <div class="container">
-	<h3>캐치마인드</h3>
+	<h3>내가 작성한 글</h3>
 	<input type="button" value="글 작성"  onclick="location.href='../board/board_write.board' ">
 
 	<div class="row">
