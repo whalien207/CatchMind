@@ -21,7 +21,7 @@
 						<td align="left">${vo.id }</td>
 						<td colspan="2"></td>
 						<td align="right"><fmt:formatDate value="${vo.regdate }"
-								pattern="yyyy-MM-dd HH:분" /></td>
+								pattern="yyyy-MM-dd HH:mm" /></td>
 					</tr>
 					<tr style="color: white;">
 						<td colspan="5" align="left">${vo.comments }</td>
