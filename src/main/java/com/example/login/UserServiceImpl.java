@@ -79,7 +79,7 @@ public class UserServiceImpl implements UserService{
 		String point = request.getParameter("point");
 		
 		UserDAO dao = UserDAO.getInstance();
-		UserVO vo = dao.inquirePoints(id);
+		UserVO vo = dao.getInfo(id);
 		
 		return vo;
 	}
