@@ -128,8 +128,9 @@ jQuery(function() {
     });
 
     $(document).on('click', '#question', function(e) {
+	  var hint =$(this).val()
       swal(
-       	'HINT : ${vo.hint}'+("${vo.hint}"),
+       	'HINT : '+hint,
         '힌트로 <b style="color:grey;">5포인트</b> 차감!',
         'question'
       )
