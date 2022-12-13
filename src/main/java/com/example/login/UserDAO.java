@@ -35,7 +35,7 @@ public class UserDAO {
 	}
 
 	//4. 필요한 데이터베이스 변수 선언
-	public String URL = "jdbc:oracle:thin:@172.30.1.2:1521:xe";
+	public String URL = "jdbc:oracle:thin:@172.30.1.67:1521:xe";
 	public String UID = "catchm";
 	public String UPW = "catchm";
 
