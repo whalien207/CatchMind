@@ -13,14 +13,8 @@
 	</div>
 	<div align="center" style="padding-bottom: 5px">
 		[5 Point 사용하여 힌트보기]
-		<button class="w-btn w-btn-gra3 w-btn-gra-anim" type="button" onclick="alert('힌트 : ${vo.hint}');" style="cursor:pointer">
-			Hint!</button>
-
-
-	 <button class="w-btn w-btn-gra3 w-btn-gra-anim" type="button" id="question">Hint!</button>
-
+	 <button class="w-btn w-btn-gra3 w-btn-gra-anim" type="button" id="question" value ="${vo.hint }">Hint!</button>
 	</div>
-
 
 	<!-- 글에 작성된 댓글 리스트 보기 -->
 	<c:forEach var="vo" items="${list }">

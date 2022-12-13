@@ -25,7 +25,7 @@ public class BoardDAO {
 		return instance;
 	}
 
-	public String URL = "jdbc:oracle:thin:@172.30.1.2:1521:xe";
+	public String URL = "jdbc:oracle:thin:@172.30.1.67:1521:xe";
 	public String UID = "catchm";
 	public String UPW = "catchm";
 

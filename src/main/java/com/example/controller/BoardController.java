@@ -72,6 +72,7 @@ public class BoardController extends HttpServlet {
 			BoardVO vo = service.getContent(request, response);
 			if(vo != null) { //글이 있다면 
 				request.setAttribute("vo", vo);
+				request.setAttribute("hint", vo.getHint());
 				
 				//2.해당 글에 달린 댓글들 가지고 오기 ArrayList<CommentVO>로.
 				ArrayList<CommentsVO> list= service.getComment(request, response);
